@@ -13,11 +13,25 @@ export interface IQueryString {
 const schema = {
   type: "object",
   additionalProperties: false,
+
   properties: {
     format: { type: "string", enum: ["png", "jpeg", "tiff", "webp"] },
     quality: { type: "number", minimum: 1, maximum: 100 },
 
     resize: { type: "string", pattern: "^\\d*x\\d*$" },
+  },
+
+  dependencies: {
+    quality: {
+      properties: {
+        format: {
+          oneOf: [
+            { const: "jpeg" },
+            { const: "webp" },
+          ],
+        },
+      },
+    },
   },
 };
 

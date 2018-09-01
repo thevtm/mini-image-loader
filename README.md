@@ -44,8 +44,6 @@ Adjust the lossless quality with the `quality` property.
 
 **Param**: `enum`, one of `png`, `jpeg`, `tiff`, `webp`.
 
-**Default**: keep original format.
-
 ```javascript
 require("./duck.jpg?format=png");
 require("./frog.png?format=webp");
@@ -56,8 +54,6 @@ require("./frog.png?format=webp");
 Set quality for lossless compression (`jpeg` and `webp`).
 
 **Param**: `integer`, between `1` and `100`.
-
-**Default**: original or 80.
 
 ```javascript
 require("./frog.png?format=jpeg&quality=90");
