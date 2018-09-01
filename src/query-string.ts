@@ -10,6 +10,8 @@ export interface IQueryString {
   resize?: string;
 
   gamma?: number | boolean;
+  flip?: boolean;
+  flop?: boolean;
 }
 
 const schema = {
@@ -28,6 +30,8 @@ const schema = {
         { type: "number", minimum: 1.0, maximum: 3.0 },
       ],
     },
+    flip: { const: true },
+    flop: { const: true },
   },
 
   dependencies: {

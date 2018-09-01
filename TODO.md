@@ -16,5 +16,5 @@
 - [ ] Image
   - [ ] Blur
   - [x] Gamma
-  - [ ] Flip
-  - [ ] Flop
+  - [x] Flip
+  - [x] Flop

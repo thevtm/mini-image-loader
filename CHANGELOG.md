@@ -7,6 +7,11 @@ and this project adheres to [ZeroVer](https://0ver.org/).
 
 ## Unreleased
 
+### Added
+
+- `flip` Flip the image about the vertical Y axis.
+- `flop` Flip the image about the vertical X axis.
+
 ## 0.0.2 - 2018-09-01
 
 ### Added

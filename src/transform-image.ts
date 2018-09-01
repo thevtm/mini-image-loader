@@ -13,4 +13,15 @@ export default function(image: SharpInstance, parsedQS: IQueryString): void {
       image.gamma();
     }
   }
+
+  if (parsedQS.flip !== undefined) {
+    debug("Flipping. %o", { flip: parsedQS.flip });
+    image.flip();
+  }
+
+  if (parsedQS.flop !== undefined) {
+    debug("Flopping. %o", { flop: parsedQS.flop });
+    image.flop();
+  }
+
 }
