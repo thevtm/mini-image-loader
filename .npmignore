@@ -1,0 +1,24 @@
+# code
+src/
+example/
+
+# TypeScript
+tsconfig.json
+tslint.json
+
+# misc
+*.md
+node_modules/
+
+.git/
+.code/
+.vscode/
+.idea/
+
+.gitignore
+
+yarn.lock
+package-lock.json
+
+npm-shrinkwrap.json
+npm-debug.log
