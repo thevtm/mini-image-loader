@@ -1,6 +1,6 @@
-# mini-image-loader
+# mini-image-loader ![npm](https://img.shields.io/npm/v/mini-image-loader.svg?style=flat-square) ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?longCache=true&style=flat-square)
 
-Image processing loader for Webpack.
+Small image processing loader for Webpack.
 
 ## Usage
 
