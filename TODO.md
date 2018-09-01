@@ -13,8 +13,8 @@
   - [ ] Background
   - [ ] Greyscale / Grayscale
   - [ ] Tint
-- [ ] Image
-  - [ ] Blur
+- [x] Image
+  - [x] Blur
   - [x] Gamma
   - [x] Flip
   - [x] Flop
