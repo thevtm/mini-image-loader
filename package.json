@@ -1,6 +1,6 @@
 {
   "name": "mini-image-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Small image processing loader for Webpack.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
