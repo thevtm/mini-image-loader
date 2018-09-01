@@ -15,6 +15,6 @@
   - [ ] Tint
 - [ ] Image
   - [ ] Blur
-  - [ ] Gamma
+  - [x] Gamma
   - [ ] Flip
   - [ ] Flop

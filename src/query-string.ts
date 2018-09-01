@@ -8,6 +8,8 @@ export interface IQueryString {
   quality?: number;
 
   resize?: string;
+
+  gamma?: number | boolean;
 }
 
 const schema = {
@@ -19,6 +21,13 @@ const schema = {
     quality: { type: "number", minimum: 1, maximum: 100 },
 
     resize: { type: "string", pattern: "^\\d*x\\d*$" },
+
+    gamma: {
+      anyOf: [
+        { const: true },
+        { type: "number", minimum: 1.0, maximum: 3.0 },
+      ],
+    },
   },
 
   dependencies: {
@@ -44,6 +53,9 @@ export function parseQueryString(resourceQuery: string): IQueryString | Error {
   }
 
   const parsedQuery = luParseQuery(resourceQuery);
+
+  debug("Parsed query string. %o", parsedQuery);
+
   const valid = validate(parsedQuery);
 
   if (!valid) {

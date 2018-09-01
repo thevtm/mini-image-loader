@@ -2,8 +2,10 @@ import sharp from "sharp";
 
 import debug from "./debug";
 import { parseQueryString } from "./query-string";
+
 import transformSize from "./transform-size";
 import transformFormat from "./transform-format";
+import transformImage from "./transform-image";
 
 // Read target file as a buffer instead of string
 export const raw = true;
@@ -30,6 +32,7 @@ export default function(this: any, source: Buffer): void {
 
   transformSize(img, parsedQueryString);
   transformFormat(this, img, parsedQueryString);
+  transformImage(img, parsedQueryString);
 
   img.toBuffer()
     .then((buf) => {

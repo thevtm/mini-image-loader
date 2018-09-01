@@ -72,3 +72,17 @@ require("./duck.png?resize=120x240");
 require("./cats.jpg?resize=900x");
 require("./frog.png?resize=x300");
 ```
+
+### gamma
+
+Apply a gamma correction by reducing the encoding (darken) pre-resize at a factor of 1/gamma then increasing the encoding (brighten) post-resize at a factor of gamma. This can improve the perceived brightness of a resized image in non-linear colour spaces. JPEG and WebP input images will not take advantage of the shrink-on-load performance optimisation when applying a gamma correction.
+
+**Param**: `number`, between 1.0 and 3.0. (optional, default 2.2)
+
+Examples:
+
+```javascript
+require("./duck.png?gamma");
+require("./cats.jpg?gamma=1.2");
+require("./frog.png?gamma=2.4");
+```
