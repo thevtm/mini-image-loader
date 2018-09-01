@@ -9,6 +9,7 @@ export interface IQueryString {
 
   resize?: string;
 
+  blur?: number | boolean;
   gamma?: number | boolean;
   flip?: boolean;
   flop?: boolean;
@@ -24,6 +25,12 @@ const schema = {
 
     resize: { type: "string", pattern: "^\\d*x\\d*$" },
 
+    blur: {
+      anyOf: [
+        { const: true },
+        { type: "number", minimum: 0.3, maximum: 1000 },
+      ],
+    },
     gamma: {
       anyOf: [
         { const: true },
