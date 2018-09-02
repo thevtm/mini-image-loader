@@ -85,6 +85,20 @@ Examples:
 require("./duck.png?tint=#BABACA");
 ```
 
+### greyscale
+
+Convert to 8-bit greyscale; 256 shades of grey. This is a linear operation. If the input image is in a non-linear colour space such as sRGB, use gamma with greyscale for the best results. By default the output image will be web-friendly sRGB and contain three (identical) color channels.
+
+Examples:
+
+```javascript
+require("./duck.png?greyscale");
+```
+
+### grayscale
+
+Alternative spelling of greyscale.
+
 ### blur
 
 Blur the image.

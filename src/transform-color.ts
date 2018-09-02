@@ -13,4 +13,10 @@ export default function(image: SharpInstance, parsedQS: IQueryString) {
     image.tint(parsedQS.tint);
   }
 
+  // Greyscale / Grayscale
+  if (parsedQS.greyscale !== undefined || parsedQS.grayscale) {
+    debug("Greyscaling. %o", { greyscale: parsedQS.greyscale, grayscale: parsedQS.greyscale });
+    image.greyscale();
+  }
+
 }

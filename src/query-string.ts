@@ -10,6 +10,8 @@ export interface IQueryString {
   resize?: string;
 
   tint?: string;
+  greyscale?: boolean;
+  grayscale?: boolean;
 
   blur?: number | boolean;
   gamma?: number | boolean;
@@ -28,6 +30,8 @@ const schema = {
     resize: { type: "string", pattern: "^\\d*x\\d*$" },
 
     tint: { type: "string", pattern: "^#[a-fA-F0-9]{6}$" },
+    greyscale: { const: true },
+    grayscale: { const: true },
 
     blur: {
       anyOf: [
