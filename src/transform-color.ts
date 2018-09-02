@@ -8,7 +8,8 @@ export default function(image: SharpInstance, parsedQS: IQueryString) {
   // Tint
   if (parsedQS.tint !== undefined) {
     debug("Setting tint. %o", { tint: parsedQS.tint });
-    // @ts-ignore
+
+    // @ts-ignore Type definitions are outdated
     image.tint(parsedQS.tint);
   }
 
