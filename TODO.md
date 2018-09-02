@@ -12,7 +12,7 @@
 - [ ] Color
   - [ ] Background
   - [ ] Greyscale / Grayscale
-  - [ ] Tint
+  - [x] Tint
 - [x] Image
   - [x] Blur
   - [x] Gamma

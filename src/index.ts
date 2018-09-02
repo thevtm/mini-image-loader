@@ -5,6 +5,7 @@ import { parseQueryString } from "./query-string";
 
 import transformSize from "./transform-size";
 import transformFormat from "./transform-format";
+import transformColor from "./transform-color";
 import transformImage from "./transform-image";
 
 // Read target file as a buffer instead of string
@@ -32,6 +33,7 @@ export default function(this: any, source: Buffer): void {
 
   transformSize(img, parsedQueryString);
   transformFormat(this, img, parsedQueryString);
+  transformColor(img, parsedQueryString);
   transformImage(img, parsedQueryString);
 
   img.toBuffer()

@@ -73,6 +73,18 @@ require("./cats.jpg?resize=900x");
 require("./frog.png?resize=x300");
 ```
 
+### tint
+
+Tint the image using the provided chroma while preserving the image luminance. An alpha channel may be present and will be unchanged by the operation.
+
+**Param**: `string`, following the `rgb hex` format `#RRGGBB`.
+
+Examples:
+
+```javascript
+require("./duck.png?tint=#BABACA");
+```
+
 ### blur
 
 Blur the image.
