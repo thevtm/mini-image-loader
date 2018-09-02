@@ -63,12 +63,12 @@ const ajv = new Ajv({ allErrors: true, coerceTypes: true });
 const validate = ajv.compile(schema);
 
 export function parseQueryString(resourceQuery: string): IQueryString | Error {
+
   if (resourceQuery === "") {
     resourceQuery = "?";
   }
 
   const parsedQuery = luParseQuery(resourceQuery);
-
   debug("Parsed query string. %o", parsedQuery);
 
   const valid = validate(parsedQuery);
@@ -80,4 +80,5 @@ export function parseQueryString(resourceQuery: string): IQueryString | Error {
 
   debug("Valid query string %O", { parsedQuery });
   return parsedQuery as IQueryString;
+
 }

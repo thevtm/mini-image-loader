@@ -4,11 +4,14 @@ import debug from "./debug";
 import { IQueryString } from "./query-string";
 
 export default function(image: SharpInstance, parsedQuery: IQueryString): void {
+
+  // Resize
   if (parsedQuery.resize !== undefined) {
     const [width, height] = parseSize(parsedQuery.resize);
     debug("Resizing image. %o", { query: parsedQuery.resize, width, height });
     image.resize(width, height);
   }
+
 }
 
 function parseSize(size: string): [number?, number?] {

@@ -12,6 +12,7 @@ import transformImage from "./transform-image";
 export const raw = true;
 
 export default function(this: any, source: Buffer): void {
+
   // Flag as async
   const callback = this.async();
 
@@ -32,9 +33,9 @@ export default function(this: any, source: Buffer): void {
   const img = sharp(source);
 
   transformSize(img, parsedQueryString);
-  transformFormat(this, img, parsedQueryString);
   transformColor(img, parsedQueryString);
   transformImage(img, parsedQueryString);
+  transformFormat(this, img, parsedQueryString);
 
   img.toBuffer()
     .then((buf) => {
@@ -45,4 +46,5 @@ export default function(this: any, source: Buffer): void {
       debug("Unable to load image!");
       callback(err);
     });
+
 }
