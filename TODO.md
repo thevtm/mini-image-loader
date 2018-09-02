@@ -9,8 +9,8 @@
 - [ ] Size
   - [x] Resize
   - [ ] Crop
-- [ ] Color
-  - [ ] Background
+  - [ ] Gravity
+- [x] Color
   - [x] Greyscale / Grayscale
   - [x] Tint
 - [x] Image
