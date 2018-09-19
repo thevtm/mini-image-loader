@@ -1,13 +1,18 @@
 import Ajv from "ajv";
 import { parseQuery as luParseQuery } from "loader-utils";
 
-import debug from "./debug";
+import debug from "../debug";
+
+import { schema } from "./schema";
+
+export { QSCrop } from "./qs-crop";
 
 export interface IQueryString {
   format?: string;
   quality?: number;
 
   resize?: string;
+  crop?: string | boolean;
 
   tint?: string;
   greyscale?: boolean;
@@ -18,50 +23,6 @@ export interface IQueryString {
   flip?: boolean;
   flop?: boolean;
 }
-
-const schema = {
-  type: "object",
-  additionalProperties: false,
-
-  properties: {
-    format: { type: "string", enum: ["png", "jpeg", "tiff", "webp"] },
-    quality: { type: "number", minimum: 1, maximum: 100 },
-
-    resize: { type: "string", pattern: "^\\d*x\\d*$" },
-
-    tint: { type: "string", pattern: "^#[a-fA-F0-9]{6}$" },
-    greyscale: { const: true },
-    grayscale: { const: true },
-
-    blur: {
-      anyOf: [
-        { const: true },
-        { type: "number", minimum: 0.3, maximum: 1000 },
-      ],
-    },
-    gamma: {
-      anyOf: [
-        { const: true },
-        { type: "number", minimum: 1.0, maximum: 3.0 },
-      ],
-    },
-    flip: { const: true },
-    flop: { const: true },
-  },
-
-  dependencies: {
-    quality: {
-      properties: {
-        format: {
-          oneOf: [
-            { const: "jpeg" },
-            { const: "webp" },
-          ],
-        },
-      },
-    },
-  },
-};
 
 const ajv = new Ajv({ allErrors: true, coerceTypes: true });
 const validate = ajv.compile(schema);

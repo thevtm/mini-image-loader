@@ -6,10 +6,9 @@
   - [x] Quality
   - [ ] LossLess
   - [ ] Near LossLess
-- [ ] Size
+- [x] Size
   - [x] Resize
-  - [ ] Crop
-  - [ ] Gravity
+  - [x] Crop
 - [x] Color
   - [x] Greyscale / Grayscale
   - [x] Tint

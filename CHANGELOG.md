@@ -7,6 +7,10 @@ and this project adheres to [ZeroVer](https://0ver.org/).
 
 ## Unreleased
 
+### Added
+
+- `crop`
+
 ## 0.0.6 - 2018-09-01
 
 ### Added

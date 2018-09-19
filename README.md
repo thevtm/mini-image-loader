@@ -40,7 +40,7 @@ Webpack config:
 
 Force output to a given format.
 
-Adjust the lossless quality with the `quality` property.
+Adjust the lossless compression quality with the `quality` property.
 
 **Param**: `enum`, one of `png`, `jpeg`, `tiff`, `webp`.
 
@@ -72,6 +72,21 @@ require("./duck.png?resize=120x240");
 require("./cats.jpg?resize=900x");
 require("./frog.png?resize=x300");
 ```
+
+### crop
+
+Crop the resized image to the exact size specified by `resize`.
+
+The experimental strategy-based approach resizes so one dimension is at its target length then repeatedly ranks edge regions, discarding the edge with the lowest score based on the selected strategy.
+
+- **entropy**: focus on the region with the highest Shannon entropy.
+- **attention**: focus on the region with the highest luminance frequency, colour saturation and presence of skin tones.
+
+**Param**: `string`, `north`, `northeast`, `east`, `southeast`, `south`, `southwest`, `west`, `northwest`, `center`, `centre`, `entropy` or `attention`.
+
+### gravity
+
+Possible attributes of the optional sharp.gravity are north, northeast, east, southeast, south, southwest, west, northwest, center and centre.
 
 ### tint
 
