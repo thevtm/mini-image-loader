@@ -2,10 +2,10 @@
 
 ## v0.1
 
-- [ ] Format
+- [x] Format
   - [x] Quality
-  - [ ] LossLess
-  - [ ] Near LossLess
+  - [x] LossLess
+  - [x] Near LossLess
 - [x] Size
   - [x] Resize
   - [x] Crop

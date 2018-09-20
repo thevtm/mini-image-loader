@@ -8,8 +8,21 @@ export default function(context: any, image: SharpInstance, parsedQuery: IQueryS
 
   // Format & Quality
   if (parsedQuery.format !== undefined) {
-    debug("Changing the format. %o", { format: parsedQuery.format , quality: parsedQuery.quality});
-    image.toFormat(parsedQuery.format, { quality: parsedQuery.quality });
+    debug("Changing the format. %o", {
+      format: parsedQuery.format,
+      quality: parsedQuery.quality,
+      lossless: parsedQuery.lossless,
+      nearLossless: parsedQuery.nearLossless,
+    });
+
+    image.toFormat(parsedQuery.format, {
+      quality: parsedQuery.quality,
+
+      // @ts-ignore
+      lossless: parsedQuery.lossless,
+      nearLossless: parsedQuery.nearLossless,
+    });
+
     context.resourcePath = replaceExt(context.resourcePath, `.${parsedQuery.format}`);
   }
 }

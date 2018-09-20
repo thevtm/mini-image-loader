@@ -8,6 +8,8 @@ export const schema = {
   properties: {
     format: { type: "string", enum: ["png", "jpeg", "tiff", "webp"] },
     quality: { type: "number", minimum: 1, maximum: 100 },
+    lossless: { const: true },
+    nearLossless: { const: true },
 
     resize: { type: "string", pattern: "^\\d*x\\d*$" },
     crop: {
@@ -54,10 +56,22 @@ export const schema = {
       },
     },
 
-    // crop: {
-    //   properties: {
-    //     resize: { $ref: "#/properties/resize" },
-    //   },
-    // },
+    lossless: {
+      properties: {
+        format: { const: "webp" },
+      },
+    },
+
+    nearLossless: {
+      properties: {
+        format: { const: "webp" },
+      },
+    },
+
+    crop: {
+      properties: {
+        resize: { $ref: "#/properties/resize" },
+      },
+    },
   },
 };

@@ -10,6 +10,8 @@ export { QSCrop } from "./qs-crop";
 export interface IQueryString {
   format?: string;
   quality?: number;
+  lossless?: boolean;
+  nearLossless?: boolean;
 
   resize?: string;
   crop?: string | boolean;

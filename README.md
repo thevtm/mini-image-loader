@@ -59,6 +59,22 @@ Set quality for lossless compression (`jpeg` and `webp`).
 require("./frog.png?format=jpeg&quality=90");
 ```
 
+### lossless
+
+Set lossless compression for `webp`.
+
+```javascript
+require("./frog.png?format=webp&lossless");
+```
+
+### nearLossless
+
+Set near lossless compression for `webp`.
+
+```javascript
+require("./frog.png?format=webp&nearLossless");
+```
+
 ### resize
 
 Resize image to `width` x `height`.
@@ -83,6 +99,14 @@ The experimental strategy-based approach resizes so one dimension is at its targ
 - **attention**: focus on the region with the highest luminance frequency, colour saturation and presence of skin tones.
 
 **Param**: `string`, `north`, `northeast`, `east`, `southeast`, `south`, `southwest`, `west`, `northwest`, `center`, `centre`, `entropy` or `attention`.
+
+Examples:
+
+```javascript
+require("./duck.png?resize=120x240&crop");
+require("./cats.jpg?resize=900x100&crop=entropy");
+require("./frog.png?resize=300x300&crop=south");
+```
 
 ### gravity
 
