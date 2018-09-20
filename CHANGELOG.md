@@ -7,6 +7,8 @@ and this project adheres to [ZeroVer](https://0ver.org/).
 
 ## Unreleased
 
+## 0.1.0 - 2018-09-19
+
 ### Added
 
 - `lossless`
